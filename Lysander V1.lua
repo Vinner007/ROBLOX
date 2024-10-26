@@ -3904,7 +3904,7 @@ AllFuncs['Auto Find Boat Event'] = function()
 	end
 end
 
-Event = Tap.Event:AddSection('Event') do
+Event = Tap.Event:AddSection('') do
 	IngredientDropdwon = Dropdown(Event, "Select Ingredient", "", IngredientList, false, "Ingredient Select")
 	Toggle(Event, "Auto Halloween Event","", "Auto Find Boat Event")
 	Toggle(Event, "Back To Auto Fishing","", "Back To Fishing")
@@ -4132,33 +4132,6 @@ MiscPlayer = Tap.Player:AddSection('Misc Player') do
 	})
 end
 
-Shoppy = Tap.Shop:AddSection('Shop All') do
-	Toggle(Shoppy, "Teleport To Buy", "", "Teleport To Buy")
-	for i,v in pairs(workspace.world.interactables:GetDescendants()) do
-		if v.Name == "purchaserompt" or v.ClassName == "ProximityPrompt" then
-			v.HoldDuration = 0
-			Shoppy:AddButton({
-				Title = "Buy "..v.Parent.Name,
-				Description = v.ActionText,
-				Callback = function()
-					if fireproximityprompt and not Config['Teleport To Buy'] then
-						local OldCFrame = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
-						LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = v.Parent:GetPivot()
-						delay(.3, function()
-							fireproximityprompt(v, 1)
-							LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = OldCFrame
-						end)
-					else
-						if not fireproximityprompt then
-							Notify("Execute Not Support fireproximityprompt")
-						end
-						LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = v.Parent:GetPivot()
-					end
-				end
-			})
-		end
-	end
-end
 
 WebHookConfigs = Tap.Configs:AddSection('WebHook') do
 	TextBox(WebHookConfigs, "WebHook","","discord.com/api/webhooks", false, "WebHook Configs")
