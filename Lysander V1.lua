@@ -3,8 +3,8 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Skyx2_DEV | GUI"; -- Required. Has to be a string!
-    Text = "Welcome To Happyland!"; -- Required. Has to be a string! -- Optional, defaults to "" (no icon)
+    Title = "VINNERX | GUI"; -- Required. Has to be a string!
+    Text = "Welcome To LYSANDER HUB!"; -- Required. Has to be a string! -- Optional, defaults to "" (no icon)
     Image = "rbxassetid://3468950946";
     Duration = 10; -- Optional, defaults to 5 seconds
     Button1 = "Okay"; -- Optional, makes a button appear with the given text that, when clicked, fires the Callback if it's given
@@ -3175,7 +3175,6 @@ local Tap = {
 	General = Window:AddTab({Title = "Generals", Icon = "box"}),
 	Event = Window:AddTab({Title = "Event", Icon = "star"}),
 	Player = Window:AddTab({ Title = "Player", Icon = "user"}),
-	Shop = Window:AddTab({ Title = "Shopee", Icon = "shopping-bag"}),
 	Configs = Window:AddTab({Title = "Configs", Icon = "diamond"}),
 	Teleport = Window:AddTab({Title = "Teleport", Icon = "asterisk"}),
 	Settings = Window:AddTab({Title = "Settings", Icon = "settings"})
